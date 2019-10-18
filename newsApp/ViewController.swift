@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	@IBOutlet weak var newsTableView: UITableView!
 	let requestManager = RequestManager()
 	var news: [String] = []
+	var currentNewsType = "emailed"
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -21,7 +22,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	}
 	
 	func getActualNews() {
-		requestManager.getEmailed { titles in
+		requestManager.getNews(newsType: currentNewsType) { titles in
 			self.news = titles
 			DispatchQueue.main.async {
 				self.newsTableView.reloadData()

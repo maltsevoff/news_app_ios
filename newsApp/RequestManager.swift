@@ -15,31 +15,13 @@ class RequestManager {
 	private let apiKey = "ljGvO44YKHpS4hUn3GG2I5nNH6NscttG"
 	private let period = 30
 	
-	func getEmailed(completionHandler: @escaping([String]) -> Void) {
-		let reqUrl = "https://api.nytimes.com/svc/mostpopular/v2/emailed/\(period).json?api-key=\(apiKey)"
+	func getNews(newsType: String, completionHandler: @escaping([String]) -> Void) {
+		let reqUrl = "https://api.nytimes.com/svc/mostpopular/v2/\(newsType)/\(period).json?api-key=\(apiKey)"
 		request(reqUrl).responseJSON(completionHandler: { response in
 			if response.result.isSuccess {
 				let dict = JSON(response.value!)
 				let titles = self.parseData(data: dict)
 				completionHandler(titles)
-			}
-			})
-	}
-	
-	func getShared() {
-		let reqUrl = "https://api.nytimes.com/svc/mostpopular/v2/shared/\(period).json?api-key=\(apiKey)"
-		request(reqUrl).responseJSON(completionHandler: { response in
-			if response.result.isSuccess {
-				print(response)
-			}
-			})
-	}
-	
-	func getViewed() {
-		let reqUrl = "https://api.nytimes.com/svc/mostpopular/v2/viewed/\(period).json?api-key=\(apiKey)"
-		request(reqUrl).responseJSON(completionHandler: { response in
-			if response.result.isSuccess {
-				print(response)
 			}
 			})
 	}
