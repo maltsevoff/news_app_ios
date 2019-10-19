@@ -12,6 +12,7 @@ class NewsCell: UITableViewCell {
 
 	@IBOutlet weak private var articleImageView: UIImageView!
 	@IBOutlet weak private var titleLabel: UILabel!
+	@IBOutlet weak var dateLabel: UILabel!
 	
 	var articleImageUrl: String? {
 		didSet {
@@ -37,6 +38,12 @@ class NewsCell: UITableViewCell {
 			titleLabel.text = articleTitle
 		}
 	}
+	var articleDate: String? {
+		didSet {
+			dateLabel.text = articleDate
+		}
+	}
+	
 	override func awakeFromNib() {
         super.awakeFromNib()
 		articleImageView.contentMode = .scaleAspectFit

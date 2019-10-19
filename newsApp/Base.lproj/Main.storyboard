@@ -26,32 +26,40 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="191"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suG-Tp-xoC">
-                                                    <rect key="frame" x="56.333333333333343" y="150.66666666666666" width="262.33333333333326" height="20.333333333333343"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suG-Tp-xoC">
+                                                    <rect key="frame" x="20" y="171" width="262.66666666666669" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aga-I2-kXB">
-                                                    <rect key="frame" x="93.666666666666671" y="11.000000000000007" width="187.66666666666663" height="115.66666666666669"/>
+                                                    <rect key="frame" x="20" y="11" width="187.66666666666666" height="136"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="aga-I2-kXB" secondAttribute="height" multiplier="1:1" id="0fm-8t-B0I"/>
-                                                        <constraint firstAttribute="height" constant="100" id="qaI-O8-CHf"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1k9-Ef-d9X">
+                                                    <rect key="frame" x="318.33333333333331" y="11" width="41.666666666666686" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="1k9-Ef-d9X" firstAttribute="top" secondItem="Ohp-sg-REJ" secondAttribute="topMargin" id="9rr-1L-hIf"/>
+                                                <constraint firstAttribute="trailing" secondItem="1k9-Ef-d9X" secondAttribute="trailing" constant="15" id="BH7-nc-r50"/>
                                                 <constraint firstItem="suG-Tp-xoC" firstAttribute="width" secondItem="Ohp-sg-REJ" secondAttribute="width" multiplier="0.7" id="F6d-aQ-wG2"/>
+                                                <constraint firstItem="suG-Tp-xoC" firstAttribute="leading" secondItem="aga-I2-kXB" secondAttribute="leading" id="HiN-hE-Yz6"/>
                                                 <constraint firstAttribute="bottom" secondItem="suG-Tp-xoC" secondAttribute="bottom" constant="20" id="RMA-FD-1rP"/>
                                                 <constraint firstItem="aga-I2-kXB" firstAttribute="top" secondItem="Ohp-sg-REJ" secondAttribute="top" constant="11" id="Zj8-bk-fER"/>
-                                                <constraint firstItem="aga-I2-kXB" firstAttribute="centerX" secondItem="Ohp-sg-REJ" secondAttribute="centerX" id="eSh-U4-A6X"/>
+                                                <constraint firstItem="aga-I2-kXB" firstAttribute="leading" secondItem="Ohp-sg-REJ" secondAttribute="leading" constant="20" id="gsC-mq-EKK"/>
                                                 <constraint firstItem="aga-I2-kXB" firstAttribute="width" secondItem="Ohp-sg-REJ" secondAttribute="width" multiplier="0.5" id="jEM-81-gzX"/>
-                                                <constraint firstItem="suG-Tp-xoC" firstAttribute="centerX" secondItem="Ohp-sg-REJ" secondAttribute="centerX" id="p4W-Yh-PJo"/>
                                                 <constraint firstItem="suG-Tp-xoC" firstAttribute="top" secondItem="aga-I2-kXB" secondAttribute="bottom" constant="24" id="scb-E9-g8h"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="articleImageView" destination="aga-I2-kXB" id="QIi-fL-5gy"/>
+                                            <outlet property="dateLabel" destination="1k9-Ef-d9X" id="Wkz-KM-6L1"/>
                                             <outlet property="titleLabel" destination="suG-Tp-xoC" id="Us0-ot-H5G"/>
                                         </connections>
                                     </tableViewCell>
@@ -141,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="958" y="92"/>
+            <point key="canvasLocation" x="957.60000000000002" y="91.625615763546804"/>
         </scene>
         <!--Article Controller-->
         <scene sceneID="mZF-zP-f5G">

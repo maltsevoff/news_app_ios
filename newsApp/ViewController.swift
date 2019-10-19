@@ -46,6 +46,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		}
 	}
 	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "ShowArticleDetails" {
+			let destination = segue.destination as! ArticleController
+			
+		}
+	}
+	
 	// MARK: - Table View
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,19 +64,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		let newsNode = articles[indexPath.row]
 		cell.articleTitle = newsNode.title
 		cell.articleImageUrl = newsNode.imageUrl
+		cell.articleDate = newsNode.publishedDate
 		return cell
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		print(indexPath.row)
 		performSegue(withIdentifier: "ShowArticleDetails", sender: nil)
-	}
-	
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == "ShowArticleDetails" {
-			let destination = segue.destination as! ArticleController
-			
-		}
 	}
 
 }
