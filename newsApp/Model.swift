@@ -22,14 +22,10 @@ func imagesForArticle(index: Int) -> [String] {
 	var images: [String] = []
 	if index >= articles.count { return images }
 	let article = articles[index].articleData
-//	let articleImages = article["media"].arrayValue.map { $0["media-metadata"] }
-	let articleImages = article["media"]
-	let array = articleImages["media-metadata"]
-	print(array)
-	print("++++++++++++++++++++++++")
-	for imgInfo in articleImages {
-		print(imgInfo)
-		print("--------------------------------")
+	let articleImages = article["media"].arrayValue.map { $0["media-metadata"] }
+	for imgInfo in articleImages[0] {
+		let imgUrl = imgInfo.1["url"].stringValue
+		images.append(imgUrl)
 	}
 	return images
 }

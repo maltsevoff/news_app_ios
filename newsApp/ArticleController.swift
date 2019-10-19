@@ -12,12 +12,14 @@ import SwiftyJSON
 class ArticleController: UIViewController {
 	
 	var articleNumber: Int?
+	var imagesUrl: [String] = []
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		if articleNumber != nil {
-			imagesForArticle(index: articleNumber!)
+			imagesUrl = imagesForArticle(index: articleNumber!)
+			print(imagesUrl)
 		}
 	}
 }
