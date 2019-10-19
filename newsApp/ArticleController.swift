@@ -7,7 +7,12 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ArticleController: UIViewController {
+	
+	override func viewDidLoad() {
+		
+	}
 	
 }

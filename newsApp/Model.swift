@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 struct News {
 	var title: String
 	var imageUrl: String
+	var articleData: JSON
 }
+
+var articles: [News] = []

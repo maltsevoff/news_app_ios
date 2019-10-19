@@ -21,7 +21,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	}
 	@IBOutlet weak var newsTableView: UITableView!
 	let requestManager = RequestManager()
-	var news: [News] = []
 	var currentNewsType = "emailed" {
 		didSet {
 			if oldValue != currentNewsType {
@@ -40,7 +39,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	func getActualNews() {
 		print("news: \(currentNewsType)")
 		requestManager.getNews(newsType: currentNewsType) { titles in
-			self.news = titles
+			articles = titles
 			DispatchQueue.main.async {
 				self.newsTableView.reloadData()
 			}
@@ -50,12 +49,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	// MARK: - Table View
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return news.count
+		return articles.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
-		let newsNode = news[indexPath.row]
+		let newsNode = articles[indexPath.row]
 		cell.articleTitle = newsNode.title
 		cell.articleImageUrl = newsNode.imageUrl
 		return cell
