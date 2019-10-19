@@ -136,7 +136,7 @@
                     <navigationItem key="navigationItem" id="fZA-pn-Rhg"/>
                     <connections>
                         <outlet property="newsTableView" destination="o69-L4-vRN" id="jfd-s7-I3h"/>
-                        <segue destination="Spy-hq-Q34" kind="show" identifier="ShowArticleDetail" id="IJD-g4-sgl"/>
+                        <segue destination="Spy-hq-Q34" kind="show" identifier="ShowArticleDetails" id="IJD-g4-sgl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -157,7 +157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0oo-d2-bZe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1944" y="95"/>
+            <point key="canvasLocation" x="1905" y="92"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OZq-J3-tSf">

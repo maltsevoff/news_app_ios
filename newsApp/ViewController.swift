@@ -63,7 +63,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		print(indexPath.row)
-		performSegue(withIdentifier: "ShowArticleDetail", sender: nil)
+		performSegue(withIdentifier: "ShowArticleDetails", sender: nil)
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "ShowArticleDetails" {
+			let destination = segue.destination as! ArticleController
+			
+		}
 	}
 
 }
