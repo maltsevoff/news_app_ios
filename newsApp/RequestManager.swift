@@ -28,7 +28,7 @@ class RequestManager {
 			})
 	}
 	
-	func parseData(data: JSON) -> [News] {
+	private func parseData(data: JSON) -> [News] {
 		guard let array = data["results"].array else { return []}
 		var resArray: [News] = []
 		for element in array {

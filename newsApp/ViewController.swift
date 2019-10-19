@@ -29,6 +29,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 			}
 		}
 	}
+	var selectedCell = 0
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -54,7 +55,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "ShowArticleDetails" {
 			let destination = segue.destination as! ArticleController
-			
+			destination.articleNumber = selectedCell
 		}
 	}
 	
@@ -82,6 +83,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		print(indexPath.row)
+		selectedCell = indexPath.row
 		performSegue(withIdentifier: "ShowArticleDetails", sender: nil)
 	}
 

@@ -14,7 +14,10 @@ class ArticleController: UIViewController {
 	var articleNumber: Int?
 	
 	override func viewDidLoad() {
+		super.viewDidLoad()
 		
+		if articleNumber != nil {
+			imagesForArticle(index: articleNumber!)
+		}
 	}
-	
 }
