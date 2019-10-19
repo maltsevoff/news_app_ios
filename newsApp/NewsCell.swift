@@ -10,7 +10,34 @@ import UIKit
 
 class NewsCell: UITableViewCell {
 
-    override func awakeFromNib() {
+	@IBOutlet weak private var articleImageView: UIImageView!
+	@IBOutlet weak private var titleLabel: UILabel!
+	
+	var articleImageUrl: String? {
+		didSet {
+			let queue = DispatchQueue.global(qos: .background)
+			queue.async {
+				do {
+					if let validUrl = self.articleImageUrl {
+						let url = URL(string: validUrl)
+						let data = try Data(contentsOf: url!)
+						let img = UIImage(data: data)
+						DispatchQueue.main.async {
+							self.articleImageView.image = img
+						}
+					}
+				} catch {
+					
+				}
+			}
+		}
+	}
+	var articleTitle: String? {
+		didSet {
+			titleLabel.text = articleTitle
+		}
+	}
+	override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
