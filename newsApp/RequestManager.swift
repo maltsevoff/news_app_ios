@@ -22,6 +22,8 @@ class RequestManager {
 				let dict = JSON(response.value!)
 				let titles = self.parseData(data: dict)
 				completionHandler(titles)
+			} else {
+				completionHandler([])
 			}
 			})
 	}

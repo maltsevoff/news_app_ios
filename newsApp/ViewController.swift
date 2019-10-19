@@ -20,6 +20,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		currentNewsType = "viewed"
 	}
 	@IBOutlet weak var newsTableView: UITableView!
+	
 	let requestManager = RequestManager()
 	var currentNewsType = "emailed" {
 		didSet {
@@ -41,7 +42,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		requestManager.getNews(newsType: currentNewsType) { titles in
 			articles = titles
 			DispatchQueue.main.async {
-				self.newsTableView.reloadData()
+				if articles.isEmpty {
+					self.alertManager()
+				} else {
+					self.newsTableView.reloadData()
+				}
 			}
 		}
 	}
@@ -51,6 +56,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 			let destination = segue.destination as! ArticleController
 			
 		}
+	}
+	
+	func alertManager() {
+		let message = "Some problems with internet connection. Try again later."
+		let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+		self.present(alert, animated: true)
 	}
 	
 	// MARK: - Table View
