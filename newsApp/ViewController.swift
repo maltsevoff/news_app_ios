@@ -78,6 +78,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		cell.articleTitle = newsNode.title
 		cell.articleImageUrl = newsNode.imageUrl
 		cell.articleDate = newsNode.publishedDate
+		cell.newsSource = newsNode.source
 		return cell
 	}
 	

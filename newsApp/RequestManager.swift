@@ -36,7 +36,8 @@ class RequestManager {
 			let imageUrlData = element["media"].arrayValue.map { $0["media-metadata"][0]["url"].string }
 			let imageUrl = imageUrlData[0] ?? ""
 			let published = element["published_date"].string ?? "no date"
-			let arrayNode = News(title: title, imageUrl: imageUrl, publishedDate: published, articleData: element)
+			let source = element["source"].string ?? "no source"
+			let arrayNode = News(title: title, imageUrl: imageUrl, publishedDate: published, source: source, articleData: element)
 			resArray.append(arrayNode)
 		}
 		return resArray

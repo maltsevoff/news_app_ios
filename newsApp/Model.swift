@@ -13,6 +13,7 @@ struct News {
 	var title: String
 	var imageUrl: String
 	var publishedDate: String
+	var source: String
 	var articleData: JSON
 }
 

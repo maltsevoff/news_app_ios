@@ -12,7 +12,8 @@ class NewsCell: UITableViewCell {
 
 	@IBOutlet weak private var articleImageView: UIImageView!
 	@IBOutlet weak private var titleLabel: UILabel!
-	@IBOutlet weak var dateLabel: UILabel!
+	@IBOutlet weak private var dateLabel: UILabel!
+	@IBOutlet weak private var newsSourceLabel: UILabel!
 	
 	var articleImageUrl: String? {
 		didSet {
@@ -43,10 +44,15 @@ class NewsCell: UITableViewCell {
 			dateLabel.text = articleDate
 		}
 	}
+	var newsSource: String? {
+		didSet {
+			newsSourceLabel.text = newsSource
+		}
+	}
 	
 	override func awakeFromNib() {
         super.awakeFromNib()
-		articleImageView.contentMode = .scaleAspectFit
+		titleLabel.font = UIFont.boldSystemFont(ofSize: 20.0)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
